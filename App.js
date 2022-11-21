@@ -1,6 +1,6 @@
 // import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TextInput, View, Button } from 'react-native';
+import { StyleSheet, Text, TextInput, View, Button, ScrollView } from 'react-native';
 //Task = todo item
 
 export default function App() {
@@ -9,7 +9,7 @@ export default function App() {
     console.log(enteredText);
   }
   const addTaskHandler = () => {
-    console.log(enteredTask);
+    console.log("clicked");
   }
 
   return (
@@ -17,19 +17,21 @@ export default function App() {
       <StatusBar style="auto" />
       <View style={styles.inputContainer}>
         <TextInput
-          placeholder="tasks"
+          placeholder="add task..."
           style={styles.input}
           clearButtonMode="always"
           onChangeText={taskInputHandler}
         />
         <Button title="ADD" onPress={addTaskHandler} />
       </View>
-      <View style={styles.listItem}>
-        <Text>Task 1</Text>
-      </View>
-      <View style={styles.listItem}>
-        <Text>Task 2</Text>
-      </View>
+      <ScrollView>
+        <View style={styles.listItem}>
+          <Text>Task 1</Text>
+        </View>
+        <View style={styles.listItem}>
+          <Text>Task 2</Text>
+        </View>
+      </ScrollView>
     </View >
   );
 }
