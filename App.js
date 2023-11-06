@@ -23,7 +23,7 @@ export default function App() {
       />
       <TouchableOpacity
         style={styles.addButton}
-        onPress={() => addTaskHandler}>
+        onPress={addTaskHandler}>
         <Text style={styles.addButtonText}>Add Task</Text>
       </TouchableOpacity>
       <ScrollView>
